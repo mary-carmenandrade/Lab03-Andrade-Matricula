@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrículas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Aplica un fondo de imagen a toda la página */
+        body {
+            background-image: url('https://i.pinimg.com/originals/17/a2/64/17a264b408408bb91167029ccfda664c.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        body, label, select, input, button {
+            font-family: "Arial", sans-serif; /* Cambia "Arial" al tipo de letra que prefieras */
+        }
+
+        /* Estilos para el contenedor principal */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.74); /* Fondo azul con transparencia */
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 1200px; /* Ancho máximo del contenedor */
+        }
+
+        /* Estilos para el formulario */
+        .matriculas-container {
+            padding: 20px;
+            background-color: rgba(255, 0, 242, 0.2); /* Fondo rojo con transparencia */
+            border-radius: 15px;
+        }
+
+        /* Estilos para la imagen */
+        .matriculas-image {
+            max-width: 100%;
+        }
+
+        /* Estilos para el botón */
+        .btn-primary-custom {
+            background-image: linear-gradient(to right, #0066ff, #00ff80, #800080);
+            color: rgb(0, 0, 0);
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-primary-custom:hover {
+            background-image: linear-gradient(to right, #800080, #00ff80, #0066ff);
+            box-shadow: 0 5px 15px rgb(255, 255, 255);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-16 main-container">
+                <div class="matriculas-container p-4 rounded">
+                    <h1 class="mb-4">Sistema de Matrículas</h1>
+                    <form action="/confirmacion" method="post">
+                        <div class="form-group">
+                            <h4 for="curso">Seleccione un curso:</h4>
+                            <select class="form-control" id="curso" name="curso">
+                                <option value="Java">Java</option>
+                                <option value="PHP">PHP</option>
+                                <option value=".NET">.NET</option>
+                            </select>
+                        </div>
+
+                        <h4>Seleccione un módulo:</h4>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="modulo" id="basico" value="Básico">
+                                <label class="form-check-label" for="basico">Básico</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="modulo" id="intermedio" value="Intermedio">
+                                <label class="form-check-label" for="intermedio">Intermedio</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="modulo" id="avanzado" value="Avanzado">
+                                <label class="form-check-label" for="avanzado">Avanzado</label>
+                            </div>
+                        </div>
+                        <script>
+                            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            checkboxes.forEach(checkbox => {
+                                checkbox.addEventListener('change', function() {
+                                    checkboxes.forEach(otherCheckbox => {
+                                        if (otherCheckbox !== this) {
+                                            otherCheckbox.checked = false;
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+
+                        <h4>Seleccione una forma de Pago:</h4>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medioPago" id="tarjeta" value="Tarjeta de crédito">
+                                <label class="form-check-label" for="tarjeta">Tarjeta de crédito</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medioPago" id="efectivo" value="Pago en efectivo">
+                                <label class="form-check-label" for="efectivo">Pago en efectivo</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-custom btn-block">Confirmar Matrícula</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://www.desarrollamos.co/wp-content/uploads/2022/05/Curso-de-Marketing-Digital-560x450.png" alt="Imagen de persona" class="img-fluid matriculas-image">
+                </div>   
+            </div>
+               
+        </div>
+    </div>
+</body>
+</html>
+

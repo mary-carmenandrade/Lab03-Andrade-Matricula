@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Agrega estilo personalizado para el fondo de la página */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1580639636060-089e14d2f05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&w=1000&q=80');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-control {
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-left: 35px; 
+            width: 100%;
+        }
+
+        .form-control-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative; 
+        }
+
+        .form-control::placeholder {
+            color: #999;
+        }
+
+        .btn-primary:hover {
+            background-color: #160c99;
+        }
+
+        .btn-3d {
+            background-image: linear-gradient(to right, #007bff, #800080);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-3d:hover {
+            background-image: linear-gradient(to right, #800080, #007bff);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="login-container text-center">
+                    <i class="fas fa-users fa-5x"></i>
+                    <h1 class="text-center"> Loguéate</h1>
+                    <p class="text-center">Por favor, loguéate antes de ingresar</p>
+                    <hr>
+                    <form action="/matriculas" method="post">
+                        <div class="form-group">
+                            <label class="form-control-container">
+                                <i class="fas fa-user form-control-icon"></i>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-container">
+                                <i class="fas fa-lock form-control-icon"></i>
+                                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-3d">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
